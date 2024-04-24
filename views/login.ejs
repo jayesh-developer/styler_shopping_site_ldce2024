@@ -1,0 +1,208 @@
+<!-- login.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome.css">
+    <link rel="stylesheet" href="templatemo-hexashop.css">
+    <link rel="stylesheet" href="owl-carousel.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <title>Login</title>
+    <style>
+        form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+    input[type="email"],
+input[type="password"],
+input[type="text"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                    
+                        <a href="/index" class="logo">
+                            <img src="logo.jpeg">   
+                        </a>
+                 
+                        <ul class="nav">
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/products">Feedback</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                            <li class="scroll-to-section"><a href="/products">Explore</a></li>
+                            
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                     
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-banner" id="top">
+        <div class="container-fluid">
+            <div class="row">
+
+                    <div class="container">
+                        <h2>Login</h2>
+                        <form action="/login" method="post">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required><br><br>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required><br><br>
+                            <button type="submit">Login</button>
+                            <center><a href="/register" class="button">Doesn't have account? register here</a></center>
+                        </form>
+
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <!-- <div class="first-item">
+                        <div class="logo">
+                            <img src="assets/images/men.png" alt="hexashop ecommerce templatemo"> 
+                        </div>
+                        <ul>
+                            <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
+                            <li><a href="#">hexashop@company.com</a></li>
+                            <li><a href="#">010-020-0340</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+                <div class="col-lg-3">
+                    <h4>Shopping &amp; Categories</h4>
+                    <ul>
+                        <li><a href="#">Upper wear</a></li>
+                        <li><a href="#">Bottom wear</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Homepage</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Help &amp; Information</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Tracking ID</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © All Rights Reserved. 
+                        
+                        <!-- <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a> -->
+
+                        <!-- <br>Distributed By: <a href="https://themewagon.com" target="_blank" title="free & premium responsive templates">ThemeWagon</a></p> -->
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- jQuery -->
+    <script src="jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="popper.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="owl-carousel.js"></script>
+    <script src="accordions.js"></script>
+    <script src="datepicker.js"></script>
+    <script src="scrollreveal.min.js"></script>
+    <script src="waypoints.min.js"></script>
+    <script src="jquery.counterup.min.js"></script>
+    <script src="imgfix.min.js"></script> 
+    <script src="slick.js"></script> 
+    <script src="lightbox.js"></script> 
+    <script src="isotope.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="custom.js"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+</body>
+</html>

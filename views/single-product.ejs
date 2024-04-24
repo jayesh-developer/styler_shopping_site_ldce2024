@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin-left: 350px;
+            margin-top: -10px;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-content img {
+            display: block;
+            margin: 0 auto 20px; /* Center the image horizontally and add some space below */
+        }
+
+        .add-to-cart-btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    
+        .add-to-cart-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Styler - Product Detail Page</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="font-awesome.css">
+
+    <link rel="stylesheet" href="templatemo-hexashop.css">
+
+    <link rel="stylesheet" href="owl-carousel.css">
+
+    <link rel="stylesheet" href="lightbox.css">
+<!--
+
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/index" class="logo">
+                            <img src="logo.jpeg">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="/index" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="/index">Men's</a></li>
+                            <li class="scroll-to-section"><a href="/index">Women's</a></li>
+                            <li class="scroll-to-section"><a href="/index">Kid's</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Pages</a>
+                                <ul>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/products">Products</a></li>
+                                    <li><a href="/single-product">Single Product</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">Features</a>
+                                <ul>
+                                    <li><a href="#">Features Page 1</a></li>
+                                    <li><a href="#">Features Page 2</a></li>
+                                    <li><a href="#">Features Page 3</a></li>
+                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="/index">Explore</a></li>
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2><%= product.name %></h2>
+                        <span>"Style speaks louder than words - shop our threads and let your wardrobe do the talking!"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+
+    <!-- ***** Product Area Starts ***** -->
+    <section class="section" id="product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                <div class="left-images">
+                    <img src="<%= product.image %>" alt="<%= product.name %>">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="right-content">
+                    <h4><%= product.name %></h4>
+                    <span class="price">$<%= product.price.toFixed(2) %></span>
+                    <ul class="stars">
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                    </ul>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</span>
+                    <div class="quote">
+                        <i class="fa fa-quote-left"></i><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod.</p>
+                    </div>
+                    <div class="quantity-content">
+                        <div class="left-content">
+                            <h6>No. of Orders</h6>
+                        </div>
+                        <div class="right-content">
+                            <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus">
+                                <input type="number" step="0" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                                <input type="button" value="+" class="plus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <h4>Total:  $<span id="totalPrice"><%= product.price.toFixed(2) %></span></h4>
+                        <div id="productData" data-price="<%= product.price %>"></div>
+                        <div class="main-border-button">
+                            <button onclick="addToCart('<%= product.name %>')" class="add-to-cart-btn">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- Alert Box -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="order-successfull.jpeg" width="100px" height="100px">
+            <h2>Order Successful</h2>
+            <p id="orderDetails"></p>
+        </div>
+    </div>
+    
+    <script>
+        // Function to display alert with total price and product name
+        function addToCart(productName) {
+            const totalPrice = document.getElementById('totalPrice').innerText;
+            const orderDetails = `Product: ${productName}\nTotal Price: ${totalPrice}`;
+            // Set order details in modal
+            document.getElementById('orderDetails').innerText = orderDetails;
+            // Display the modal
+            const modal = document.getElementById('myModal');
+            modal.style.display = 'block';
+            // Close the modal when the user clicks on the close button
+            const closeBtn = document.getElementsByClassName('close')[0];
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+            }
+            // Close the modal when the user clicks outside of it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                modal.style.display = 'none';
+                }
+            }
+// Construct form data
+const formData = new FormData();
+    formData.append('productName', productName);
+    formData.append('totalPrice', totalPrice);
+
+            // Send an AJAX request to the server
+    fetch('/api/cart/add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(orderDetails)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to add item to cart');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Handle success (if needed)
+        console.log('Item added to cart successfully:', data);
+    })
+    .catch(error => {
+        // Handle error
+        console.error('Error adding item to cart:', error.message);
+    });
+        }
+
+        function updateTotalPrice() {
+            const quantity = parseInt(document.querySelector('.qty').value);
+            const productPrice = parseFloat(document.getElementById('productData').dataset.price);
+            const totalPrice = quantity * productPrice;
+            document.getElementById('totalPrice').innerText = totalPrice.toFixed(2);
+        }
+        // Event listener to update total price when quantity changes
+        document.querySelector('.qty').addEventListener('change', updateTotalPrice);
+
+        // Event listener to decrement quantity
+        document.querySelector('.minus').addEventListener('click', function() {
+            const quantityInput = document.querySelector('.qty');
+            let quantity = parseInt(quantityInput.value);
+            if (quantity > 1) {
+                quantity--;
+                quantityInput.value = quantity;
+                updateTotalPrice();
+            }
+        });
+
+        // Event listener to increment quantity
+        document.querySelector('.plus').addEventListener('click', function() {
+            const quantityInput = document.querySelector('.qty');
+            let quantity = parseInt(quantityInput.value);
+            quantity++;
+            quantityInput.value = quantity;
+            updateTotalPrice();
+        });
+    </script>
+    <!-- ***** Product Area Ends ***** -->
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="first-item">
+                        <div class="logo">
+                            <img src="logo.jpeg" alt="stylar ecommerce">
+                        </div>
+                        <ul>
+                            <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
+                            <li><a href="#">hexashop@company.com</a></li>
+                            <li><a href="#">010-020-0340</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Shopping &amp; Categories</h4>
+                    <ul>
+                        <li><a href="#">Men’s Shopping</a></li>
+                        <li><a href="#">Women’s Shopping</a></li>
+                        <li><a href="#">Kid's Shopping</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Homepage</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Help &amp; Information</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Tracking ID</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved. 
+                        
+                        <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
+
+                        <br>Distributed By: <a href="https://themewagon.com" target="_blank" title="free & premium responsive templates">ThemeWagon</a></p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- jQuery -->
+    <script src="jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="popper.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="owl-carousel.js"></script>
+    <script src="accordions.js"></script>
+    <script src="datepicker.js"></script>
+    <script src="scrollreveal.min.js"></script>
+    <script src="waypoints.min.js"></script>
+    <script src="jquery.counterup.min.js"></script>
+    <script src="imgfix.min.js"></script> 
+    <script src="slick.js"></script> 
+    <script src="lightbox.js"></script> 
+    <script src="isotope.js"></script> 
+    <script src="quantity.js"></script>
+    
+    <!-- Global Init -->
+    <script src="custom.js"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+
+</html>
